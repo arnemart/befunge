@@ -266,7 +266,7 @@ var run = function(program) {
             if (this.program[this.y][this.x]) {
                 return this.program[this.y][this.x];
             } else {
-                error('Nothing at coordinate ' + this.x + ', ' + this.y + '. Make sure all lines are the same length');
+                return ' ';
             }
         }
     };
