@@ -189,17 +189,11 @@ if (prevProgram) {
 }
 
 var loadProgram = function(which) {
-    switch (which) {
-        case 'fizzbuzz':
-            setProgram('0> 1+:3%v\n>^  v%5:_:5% v\n,v.:_v     v0_0"zzub"v\n"v         #\n     >0"zzub"v\n"   v"fizz"<         <\n^<         $<>:#,_v\n    >      #^^#   <');
-            break;
-        case 'upcase':
-            setProgram('>0"ol"v\nv"hel"<\n>:  v\nv*48_@\n>-,:^');
-            break;
-        case 'hello':
-            setProgram('>              v\nv"Hello world!"<\n> ,,,,,,,,,,,,@');
-            break;
-    }
+    setProgram({
+        'fizzbuzz': '0> 1+:3%v\n>^  v%5:_:5% v\n,v.:_v     v0_0"zzub"v\n"v         #\n     >0"zzub"v\n"   v"fizz"<         <\n^<         $<>:#,_v\n    >      #^^#   <',
+        'upcase': '>0"ol"v\nv"hel"<\n>:  v\nv*48_@\n>-,:^',
+        'hello': '>              v\nv"Hello world!"<\n> ,,,,,,,,,,,,@'
+    }[which] || '');
 };
 
 document.getElementById('load').addEventListener('change', function() {
