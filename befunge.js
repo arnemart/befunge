@@ -188,7 +188,24 @@ if (prevProgram) {
     document.getElementById('input').value = prevProgram;
 }
 
-document.getElementById('run').addEventListener('click', loadAndRun);
+var loadProgram = function(which) {
+    switch (which) {
+        case 'fizzbuzz':
+            setProgram('0> 1+:3%v\n>^  v%5:_:5%v\n,v.:_v     v_"zzubzzif"v\n"v         #  ,,,,,,,, <\n     >"zzub"v\n"   v"fizz"< \n^<     ,,,, <\n    >       ^');
+            break;
+        case 'upcase':
+            setProgram('>0"ol"v\nv"hel"<\n>:  v\nv*48_@\n>-,:^');
+            break;
+        case 'hello':
+            setProgram('>              v\nv"Hello world!"<\n> ,,,,,,,,,,,,@');
+            break;
+    }
+};
+
+document.getElementById('load').addEventListener('change', function() {
+    loadProgram(this.value);
+    this.value = "none";
+});
 
 var doIndeedStop = function() {};
 var pleaseStop = function() {
@@ -196,6 +213,8 @@ var pleaseStop = function() {
 };
 
 document.getElementById('pleaseStop').addEventListener('click', pleaseStop);
+
+document.getElementById('run').addEventListener('click', loadAndRun);
 
 var run = function(program) {
     document.getElementById('output').innerText = '';
