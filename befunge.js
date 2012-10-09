@@ -166,7 +166,8 @@ var step = Mm()
     });
 
 var output = function(text) {
-    document.getElementById('output').innerText = text;
+    document.getElementById('output').innerHTML = text;
+    console.log(text);
 };
 
 var error = function(message) {
@@ -174,7 +175,7 @@ var error = function(message) {
 };
 
 var setProgram = function(program) {
-    document.getElementById('input').value = program;
+    document.getElementById('input').innerHTML = program;
 };
 
 var loadAndRun = function() {
@@ -185,7 +186,7 @@ var loadAndRun = function() {
 
 prevProgram = localStorage.getItem('program');
 if (prevProgram) {
-    document.getElementById('input').value = prevProgram;
+    document.getElementById('input').innerHTML = prevProgram;
 }
 
 var loadProgram = function(which) {
