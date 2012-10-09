@@ -211,7 +211,7 @@ document.getElementById('pleaseStop').addEventListener('click', pleaseStop);
 document.getElementById('run').addEventListener('click', loadAndRun);
 
 var run = function(program) {
-    document.getElementById('output').innerText = '';
+    output('');
     var prog = [],
         longest = 0;
     program.split('\n').forEach(function(line) {
@@ -237,20 +237,14 @@ var run = function(program) {
         x: -1,
         y: 0,
         next: function() {
-            switch(this.direction) {
-                case '>':
-                    this.x = (this.x + 1) % this.width;
-                    break;
-                case 'v':
-                    this.y = (this.y + 1) % this.width;
-                    break;
-                case '<':
-                    this.x = (this.x - 1) % this.width;
-                    break;
-                case '^':
-                    this.y = (this.y - 1) % this.width;
-                    break;
-            }
+            var delta = {
+                '>': [1, 0],
+                'v': [0, 1],
+                '<': [-1, 0],
+                '^': [0, -1]
+            };
+            this.x = (this.x + delta[this.direction][0]) % this.width;
+            this.y = (this.y + delta[this.direction][1]) % this.height;
             if (this.x < 0) {
                 this.x = this.width - 1;
             }
