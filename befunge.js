@@ -167,7 +167,6 @@ var step = Mm()
 
 var output = function(text) {
     document.getElementById('output').innerHTML = text;
-    console.log(text);
 };
 
 var error = function(message) {
