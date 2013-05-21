@@ -36,11 +36,11 @@ module.exports = function(setProgram, getInput, output, error) {
             return env;
         })
         .when('!', function(env) {
-            env.stack.push(env.stack.pop() === '0' ? '1' : '0');
+            env.stack.push(env.stack.pop() === 0 ? 1 : 0);
             return env;
         })
         .when('`', function(env) {
-            env.stack.push(env.stack.pop() < env.stack.pop() ? '1' : '0');
+            env.stack.push(env.stack.pop() < env.stack.pop() ? 1 : 0);
             return env;
         })
         .when(['>', 'v', '<', '^'], function(env, dir) {
