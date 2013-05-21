@@ -7,6 +7,7 @@ module.exports = function(setProgram, getInput, output, error) {
 
     var befunge = {
         start: function(program) {
+            output('', '');
             var prog = parse(program);
             env = {
                 direction: '>',
