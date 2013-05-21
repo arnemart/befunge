@@ -1,0 +1,23 @@
+{
+    "sub": true,
+    "forin": true,
+    "curly": true,
+    "browser": true,
+    "node": true,
+    "loopfunc": true,
+    "trailing": true,
+    "eqeqeq": true,
+    "indent": 4,
+    "newcap": true,
+    "noarg": true,
+    "noempty": true,
+    "undef": true,
+    "indent": false,
+    "strict": false,
+    "white": false,
+    "predef": [
+        "require",
+        "alert",
+        "prompt"
+    ]
+}
