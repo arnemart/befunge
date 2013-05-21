@@ -77,13 +77,15 @@ module.exports = function(setProgram, getInput, output, error) {
             return env;
         })
         .when('.', function(env) {
-            env.output += env.stack.pop();
-            output(env.output);
+            var chr = env.stack.pop();
+            env.output += chr;
+            output(chr, env.output);
             return env;
         })
         .when(',', function(env) {
-            env.output += String.fromCharCode(env.stack.pop());
-            output(env.output);
+            var chr = String.fromCharCode(env.stack.pop());
+            env.output += chr;
+            output(chr, env.output);
             return env;
         })
         .when('&', function(env) {

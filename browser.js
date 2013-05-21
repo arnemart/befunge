@@ -3,15 +3,11 @@ var Befunge = require('./befunge');
 var inputElement = document.getElementById('input');
 var outputElement = document.getElementById('output');
 
-var getProgram = function() {
-    return inputElement.value;
-};
-
 var setProgram = function(program) {
     inputElement.innerHTML = program;
 };
 
-var output = function(text) {
+var output = function(chr, text) {
     outputElement.innerHTML = text;
 };
 
@@ -24,12 +20,12 @@ if (prevProgram) {
     setProgram(prevProgram);
 }
 
-var befunge = new Befunge(getProgram, setProgram, prompt, output, error);
+var befunge = new Befunge(setProgram, prompt, output, error);
 
 var loadAndRun = function() {
     var program = document.getElementById('input').value;
     localStorage.setItem('program', program);
-    befunge.start(program);
+    befunge.start(inputElement.value);
 };
 
 var loadProgram = function(which) {

@@ -1,13 +1,13 @@
 var parse = require('./parser');
 var Interpreter = require('./interpreter');
 
-module.exports = function(getProgram, setProgram, getInput, output, error) {
+module.exports = function(setProgram, getInput, output, error) {
     var step = new Interpreter(setProgram, getInput, output, error);
     var env = {};
 
     var befunge = {
-        start: function() {
-            var prog = parse(getProgram());
+        start: function(program) {
+            var prog = parse(program);
             env = {
                 direction: '>',
                 stack: [],
