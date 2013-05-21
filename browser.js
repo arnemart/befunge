@@ -4,7 +4,7 @@ var inputElement = document.getElementById('input');
 var outputElement = document.getElementById('output');
 
 var setProgram = function(program) {
-    inputElement.innerHTML = program;
+    inputElement.value = program;
 };
 
 var output = function(chr, text) {
@@ -32,7 +32,8 @@ var loadProgram = function(which) {
     setProgram({
         'fizzbuzz': '0> 1+:3%v\n>^  v%5:_:5% v\n,v.:_v     v0_0"zzub"v\n"v         #\n     >0"zzub"v\n"   v"fizz"<         <\n^<         $<>:#,_v\n    >      #^^#   <',
         'upcase': '>0           v\nv"helloworld"<\n>:  v\nv*48_@\n>-,:^',
-        'hello': '>              v\nv"Hello world!"<\n> ,,,,,,,,,,,,@'
+        'hello': '>              v\nv"Hello world!"<\n> ,,,,,,,,,,,,@',
+        'rewritecounter': '>91+:9`v   \np   v  _v  \n    >$0 v  \n^ 01+*68<'
     }[which] || '');
 };
 
