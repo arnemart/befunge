@@ -1,0 +1,7 @@
+{
+  "name": "Befunge",
+  "version": "0.0.1",
+  "dependencies": {
+    "browserify": "~2.14.x"
+  }
+}
