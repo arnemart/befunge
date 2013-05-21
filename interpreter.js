@@ -1,7 +1,7 @@
 var Mm = require('./Mm');
 
 module.exports = function(setProgram, getInput, output, error) {
-    return new Mm()
+    return new Mm(error)
         .when(' ', function(env) {
             return env;
         })

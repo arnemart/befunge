@@ -1,10 +1,12 @@
 module.exports = function() {
     var methods = {};
-    var mm = function() {
+    var mm = function(error) {
         var what = arguments[0],
             args = Array.prototype.slice.call(arguments, 1).concat([what]);
         if (methods[what]) {
             return methods[what].apply(null, args);
+        } else {
+            error('No method registered for "' + what + '"');
         }
     };
     var addMethod = function(name, whatDo) {
