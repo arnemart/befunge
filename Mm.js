@@ -1,6 +1,6 @@
-module.exports = function() {
+module.exports = function(error) {
     var methods = {};
-    var mm = function(error) {
+    var mm = function() {
         var what = arguments[0],
             args = Array.prototype.slice.call(arguments, 1).concat([what]);
         if (methods[what]) {
