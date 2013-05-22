@@ -1,5 +1,8 @@
 module.exports = function(error) {
     var methods = {};
+    if (!error) {
+        error = console.log;
+    }
     var mm = function() {
         var what = arguments[0],
             args = Array.prototype.slice.call(arguments, 1).concat([what]);
