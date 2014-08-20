@@ -1,3 +1,5 @@
+**Note:** Soon to be superseded by [Befungius](https://github.com/arnemart/befungius)
+
 Befunge
 =======
 
